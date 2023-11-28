@@ -9,6 +9,7 @@ public class Elf implements Comparable<Elf> {
 
     /**
      * Calories carried by the Elf
+     * 
      * @return total calories
      */
     public int getTotalCalories() {
@@ -16,9 +17,18 @@ public class Elf implements Comparable<Elf> {
     }
 
     @Override
-    public int compareTo(Elf arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    public int compareTo(Elf other) {
+        if (other.totalCalories > this.totalCalories) {
+            return 1;
+        } else if (other.totalCalories < this.totalCalories) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+
+    public void addCalories(int calories) {
+        totalCalories = +calories;
     }
 
 }
