@@ -77,5 +77,23 @@ public class EngineSchematicShould {
         assertThat(engineSchematic.validParts()).isEmpty();
     }
 
+    @Test
+    void sum_all_valid_parts() {
 
+        List<String> inputLines = List.of(
+                "467..114..",
+                "...$.*....",
+                "..35..633.",
+                "......#...",
+                "617*......",
+                ".....+.58.",
+                "..592.....",
+                "......755.",
+                "...$.*....",
+                ".664.598.."
+        );
+        EngineSchematic engineSchematic = new EngineSchematic(inputLines);
+
+        assertThat(engineSchematic.sumOfParts()).isEqualTo(4475);
+    }
 }

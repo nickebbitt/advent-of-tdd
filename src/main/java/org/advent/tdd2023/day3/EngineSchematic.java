@@ -71,4 +71,11 @@ public class EngineSchematic {
         }
         return false;
     }
+
+    public int sumOfParts() {
+        return validParts().stream()
+                .peek(System.out::println)
+                .map(EnginePart::number)
+                .reduce(0, Integer::sum);
+    }
 }

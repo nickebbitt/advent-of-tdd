@@ -13,12 +13,7 @@ public class Solution {
 
         EngineSchematic engineSchematic = new EngineSchematic(lines);
 
-        List<EnginePart> validEngineParts = engineSchematic.validParts();
-
-        Integer sum = validEngineParts.stream()
-                .peek(System.out::println)
-                .map(EnginePart::number)
-                .reduce(0, Integer::sum);
+        Integer sum = engineSchematic.sumOfParts();
 
         System.out.println(sum);
     }
